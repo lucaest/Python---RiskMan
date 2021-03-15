@@ -1,8 +1,3 @@
-# C-Exercise 09
-# Luca Estivariz
-# Lorenz Klose
-
-
 #%%
 #packages
 import math
@@ -13,7 +8,7 @@ import pandas as pd
 import datetime
 
 
-# --------part a)
+
 def VaR_ES_var_covar (x_data, c, w, alpha):
     #empirical distribution parameters
     mu_hat = x_data.mean(axis=0)
@@ -30,7 +25,6 @@ def VaR_ES_var_covar (x_data, c, w, alpha):
 
     return VaR_hat, Es_hat
 
-# --------part b)
 #import data
 Bmw = pd.read_csv('BMW.csv', delimiter=';', decimal=',')
 Sap = pd.read_csv('SAP.csv', delimiter=';', decimal=',')
@@ -49,7 +43,6 @@ time = np.asarray(Bmw['Datum'])
 x_data = np.zeros((len(time)-1, 5))
 x_data = np.transpose([np.diff(np.log(i['Schlusskurs'])) for i in stocklist])
 
-# --------part c)
 alpha = 0.98
 alpha_bar = np.asarray([40, 29, 26, 52, 29])
 n = 252
